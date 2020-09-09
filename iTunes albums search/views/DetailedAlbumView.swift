@@ -16,22 +16,23 @@ struct DetailedAlbumView: View {
     
     var body: some View {
         
-        VStack {
+        VStack(alignment: .leading) {
             
             HStack {
                 
                 URLImage(URL(string: viewModel.selectedAlbum!.artworkUrl100)!)
                     .frame(minWidth: 100, idealWidth: 100, maxWidth: 100, minHeight: 100, idealHeight: 100, maxHeight: 100, alignment: .center)
                 
-                VStack {
+                VStack(alignment: .leading) {
                     
-                    Text(viewModel.selectedAlbum!.collectionName)
+                    Text("Album: " + viewModel.selectedAlbum!.collectionName)
                         .bold()
-                    Text(viewModel.selectedAlbum!.artistName)
+                    Text("Artist: " + viewModel.selectedAlbum!.artistName)
+                    Text("Country: " + viewModel.selectedAlbum!.country)
+                    Text("Genre: " + viewModel.selectedAlbum!.primaryGenreName)
+                    Text("Released: " + viewModel.selectedAlbum!.releaseDate)
                 }
-                
-                Spacer()
-            }
+            }.padding(20)
             //Text(String(viewModel.selectedAlbum!.songs.count))
             List(viewModel.selectedAlbum!.songs) { song in
                 Text(String(song.numberInAlbum) + ". " + song.name).bold()
