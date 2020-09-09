@@ -20,12 +20,12 @@ struct AlbumRow: View {
             
             URLImage(URL(string: album.artworkUrl100)!)
                 .frame(minWidth: 100, idealWidth: 100, maxWidth: 100, minHeight: 100, idealHeight: 100, maxHeight: 100, alignment: .center)
-            VStack {
+            VStack(alignment: .leading) {
                 Text(album.collectionName)
                     .bold().frame(alignment: .leading)
                 Text(album.artistName).frame(alignment: .leading)
             }
             Spacer()
-        }
+        }.padding(20)
     }
 }

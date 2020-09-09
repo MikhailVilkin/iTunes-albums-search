@@ -43,7 +43,7 @@ struct ContentView: View {
             // Detailed view of an album
             BottomSheetView(
                 isOpen: self.$albumDetailShown,
-                maxHeight: 850
+                maxHeight: UIScreen.main.bounds.size.height - 50
             ) {
                 if viewModel.selectedAlbum != nil {
                     
