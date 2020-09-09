@@ -21,6 +21,7 @@ final class SearchAlbumsViewModel: ObservableObject {
         
         SearchAlbumsService.shared.getAlbums(searchRequest: request) { (requestedAlbums) in
             
+            // Getting albums when it is needed
             DispatchQueue.main.async {
                 self.albums = requestedAlbums.sorted(by: {$0.collectionName < $1.collectionName})
             }

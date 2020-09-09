@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+// The main view
 struct ContentView: View {
     
     @ObservedObject var viewModel = SearchAlbumsViewModel()
@@ -18,12 +19,13 @@ struct ContentView: View {
         ZStack {
             VStack {
                 
+                // Search bar
                 SearchBar(viewModel: self.viewModel, text: $viewModel.request) {
                     
                     self.viewModel.searchAlbums()
-                    
                 }
                 
+                // List of founded albums
                 List(viewModel.albums) { album in
                     
                     Button(action: {
@@ -36,9 +38,9 @@ struct ContentView: View {
                 }
                 .navigationBarTitle(Text("Found Albums:"))
                
-                
             }
             
+            // Detailed view of an album
             BottomSheetView(
                 isOpen: self.$albumDetailShown,
                 maxHeight: 850
@@ -50,7 +52,5 @@ struct ContentView: View {
             }
             .edgesIgnoringSafeArea(.all)
         }
-        
-        
     }
 }

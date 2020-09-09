@@ -17,7 +17,6 @@
 		742E3A842506B333004D6CA4 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742E3A832506B333004D6CA4 /* SearchBar.swift */; };
 		742E3A882506B3BE004D6CA4 /* SearchAlbumsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742E3A872506B3BE004D6CA4 /* SearchAlbumsViewModel.swift */; };
 		742E3A8A2506B449004D6CA4 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742E3A892506B449004D6CA4 /* Song.swift */; };
-		742E3A8D2506B495004D6CA4 /* SearchAlbumsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742E3A8C2506B495004D6CA4 /* SearchAlbumsResponse.swift */; };
 		742E3A8F2506B4F2004D6CA4 /* AlbumRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742E3A8E2506B4F2004D6CA4 /* AlbumRow.swift */; };
 		742E3A912506B661004D6CA4 /* SearchAlbumsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742E3A902506B661004D6CA4 /* SearchAlbumsService.swift */; };
 		742E3A932506B69A004D6CA4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742E3A922506B69A004D6CA4 /* Constants.swift */; };
@@ -39,7 +38,6 @@
 		742E3A832506B333004D6CA4 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		742E3A872506B3BE004D6CA4 /* SearchAlbumsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAlbumsViewModel.swift; sourceTree = "<group>"; };
 		742E3A892506B449004D6CA4 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
-		742E3A8C2506B495004D6CA4 /* SearchAlbumsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAlbumsResponse.swift; sourceTree = "<group>"; };
 		742E3A8E2506B4F2004D6CA4 /* AlbumRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumRow.swift; sourceTree = "<group>"; };
 		742E3A902506B661004D6CA4 /* SearchAlbumsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAlbumsService.swift; sourceTree = "<group>"; };
 		742E3A922506B69A004D6CA4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -105,7 +103,6 @@
 			children = (
 				742E3A812506B296004D6CA4 /* Album.swift */,
 				742E3A892506B449004D6CA4 /* Song.swift */,
-				742E3A8C2506B495004D6CA4 /* SearchAlbumsResponse.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -223,7 +220,6 @@
 				742E3A8A2506B449004D6CA4 /* Song.swift in Sources */,
 				742E3A6F2506B1E4004D6CA4 /* ContentView.swift in Sources */,
 				742E3A822506B296004D6CA4 /* Album.swift in Sources */,
-				742E3A8D2506B495004D6CA4 /* SearchAlbumsResponse.swift in Sources */,
 				742E3A8F2506B4F2004D6CA4 /* AlbumRow.swift in Sources */,
 				7471EB2E2506C8CC0057EAEB /* DetailedAlbumView.swift in Sources */,
 				7471EB302508F8CD0057EAEB /* BottomSheetView.swift in Sources */,

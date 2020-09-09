@@ -29,6 +29,7 @@ class Album {
         self.primaryGenreName = primaryGenreName
         self.releaseDate = releaseDate
         
+        // Getting a list of songs
         DispatchQueue.main.async {
             SearchAlbumsService.shared.getSongs(collectionId: collectionId) { songsList in
                 self.songs = songsList

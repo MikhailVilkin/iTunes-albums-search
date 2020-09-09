@@ -8,14 +8,17 @@
 
 import Foundation
 
+// This class is used to get albums information from iTunes
+// It gets JSON data and parses it into swift object
 class SearchAlbumsService {
     
+    // singleton
     static let shared = SearchAlbumsService()
+    private init() {}
     
     func getAlbums (searchRequest: String, complition: @escaping ([Album])->()) {
         
         // Creating URLSession object
-        
         let search = searchRequest.replacingOccurrences(of: " ", with: "+")
         let url = URL(string: "\(Constants.BASE_URL)\(search)")
         let session = URLSession.shared
@@ -26,11 +29,10 @@ class SearchAlbumsService {
             if let data = data {
                 
                 do {
-                    
                     // Get a JSON object
                     let json = try JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
                     
-                    // Parsing the data into [AlbumModel]
+                    // Parsing the data into [Album]
                     if let albums = self.createAlbumsArray(json: json, searchRequest: searchRequest) {
                         complition(albums)
                     } else { return }
@@ -57,7 +59,6 @@ class SearchAlbumsService {
         
         var albums = [Album]()
         
-        
         if let albumResults = json["results"] as? NSArray {
             
             for album in albumResults {
@@ -72,24 +73,21 @@ class SearchAlbumsService {
                     guard let primaryGenreName = albumInfo["primaryGenreName"] as? String else { return nil }
                     guard let releaseDate = albumInfo["releaseDate"] as? String else { return nil }
                     
-                    // Get album's release year
+                    // Getting album's release year
                     let releaseDateFormatted = releaseDate.prefix(4)
                     
-                    
                     // Creating an album instance and appending it to an array
-                    // Check if the search is correct
+                    // Checking if the search is correct
                     if (artistName.contains(searchRequest) || collectionName.contains(searchRequest)) {
                         let albumInstance = Album(artistName: artistName, artworkUrl100: artworkUrl100, collectionId: collectionId, collectionName: collectionName, country: country, primaryGenreName: primaryGenreName, releaseDate: String(releaseDateFormatted))
                         albums.append(albumInstance)
                     }
-                    
                 }
             }
         }
         
         return albums
     }
-    
     
     func getSongs (collectionId: Int, complition: @escaping ([Song]) -> ()) {
         
@@ -119,8 +117,7 @@ class SearchAlbumsService {
                                     
                                     let newSong = Song(name: name, numberInAlbum: number)
                                     songs.append(newSong)
-                                }
-                                                                    
+                                }                             
                             }
                         }
                         complition(songs)
@@ -135,9 +132,7 @@ class SearchAlbumsService {
                 
                 print(error!.localizedDescription)
             }
-            
         }
-        
         
         dataTask.resume()
     }

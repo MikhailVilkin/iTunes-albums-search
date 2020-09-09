@@ -23,7 +23,6 @@ struct SearchBar: View {
         HStack {
             
             TextField("Search Albums", text: $text) {
-                
                 // Sim action when return button tapped
                 self.action()
             }
@@ -47,7 +46,6 @@ struct SearchBar: View {
                                 self.text = ""
 
                             }) {
-
                                 Image(systemName: "multiply.circle.fill")
                                     .foregroundColor(.gray)
                                     .padding(.trailing, 8)
@@ -77,8 +75,6 @@ struct SearchBar: View {
                 .transition(.move(edge: .trailing))
                 .animation(.default)
             }
-
         }.padding(10)
-        
     }
 }

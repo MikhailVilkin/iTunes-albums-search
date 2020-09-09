@@ -8,6 +8,12 @@
 
 import SwiftUI
 
+/*
+ I got this view here:
+ https://gist.github.com/mecid/78eab34d05498d6c60ae0f162bfd81ee
+ and changed it to fit my needs
+ **/
+
 fileprivate enum ViewConstants {
     static let radius: CGFloat = 16
     static let indicatorHeight: CGFloat = 6

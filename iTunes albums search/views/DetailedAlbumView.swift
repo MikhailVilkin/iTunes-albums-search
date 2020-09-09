@@ -38,6 +38,5 @@ struct DetailedAlbumView: View {
             }.colorMultiply(Color(.secondarySystemBackground))
             Text("")
         }
-        
     }
 }
